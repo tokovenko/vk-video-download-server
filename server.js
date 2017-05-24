@@ -6,6 +6,10 @@ const hostname = 'localhost';
 const port = 3001;
 
 const server = http.createServer((req, res) => {
+  if (req.url==='/') {
+    res.end('Index page!');
+  }
+
   videoLinkParser(req.url, (video) => {
     if (video) {
       const headers = {
