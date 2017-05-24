@@ -3,7 +3,7 @@ const request = require('request');
 const videoLinkParser = require('./parser/video-link-parser');
 
 const hostname = 'localhost';
-const port = 3001;
+const port = process.env.PORT || 8080;
 
 const server = http.createServer((req, res) => {
   if (req.url==='/') {
