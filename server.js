@@ -1,8 +1,9 @@
 const http = require('http');
 const request = require('request');
 const videoLinkParser = require('./parser/video-link-parser');
+const os = require('os');
 
-const hostname = 'localhost';
+const hostname = os.hostname();
 const port = process.env.PORT || 8080;
 
 const server = http.createServer((req, res) => {
