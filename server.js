@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
     if (video) {
       const headers = {
         'Content-Type': 'application/octet-stream',
-        'Content-Disposition': `attachment; filename=${encodeURIComponent(video.name)}`,
+        'Content-Disposition': `attachment; filename=${encodeURIComponent(video.name)}.mp4`,
       };
       res.writeHead(200, headers);
       request(video.link).pipe(res);
